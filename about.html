@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Counselling Template</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+  <link rel="icon" href="https://placehold.co/64x64" type="image/x-icon">
+</head>
+
+<body>
+  <header class="main-header">
+    <nav class="main-nav">
+      <a href="index.html" class="nav-logo">
+        <img src="https://placehold.co/150x75" alt="Template Logo" class="logo-img">
+        <span class="logo-text">[Company]<br><span style="color: #3d5a80">Counselling</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="about.html" class="current-page">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li class="book-now-li"><a href="booking.html" class="btn btn-primary nav-book-btn">Book Now</a></li>
+      </ul>
+
+      <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section about-hero">
+      <div class="hero-content" style="flex-direction: column; text-align: center; max-width: 800px; margin: auto;">
+        <h1 class="hero-title animate-on-scroll fade-up">
+          A Safe Space for Your Journey to <span class="serif-highlight">Clarity.</span>
+        </h1>
+        <p class="animate-on-scroll fade-up delay-100" style="font-size: 1.2rem; margin-top: 1.5rem;">
+          At [Company] Counselling, we believe that understanding comes from seeing the whole picture. Our approach is founded on empathy, trust, and a commitment to helping clients find their way forward.
+        </p>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="why-section">
+      <div class="why-content">
+        <div class="why-image animate-on-scroll fade-right">
+          <img src="https://placehold.co/600x400" alt="Counselling session placeholder">
+        </div>
+        <div class="why-text animate-on-scroll fade-left">
+          <h2>Meet Our Lead Counsellor</h2>
+          <h3 style="font-weight: 500; margin-bottom: 1rem; color: var(--clr-primary);">Professional Member, Australian Counselling Association</h3>
+          <p>Our lead counsellor is a dedicated professional who provides a warm, non-judgmental environment where clients can feel safe to explore their thoughts and emotions.</p>
+          <p>Our philosophy is that every individual possesses the inner strength to navigate life's challenges. We provide the tools, perspective, and support needed to unlock that potential and build a more resilient, fulfilling life.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="our-approach-section" style="text-align: center; max-width: 900px; margin: auto;">
+      <h2 class="animate-on-scroll fade-up">A Holistic Perspective</h2>
+      <p class="animate-on-scroll fade-up delay-100" style="margin-top: 1rem; font-size: 1.1rem;">We believe that to truly understand a challenge, one must look at it from every angle. We don't just focus on the symptoms; we explore the interconnectedness of emotional, mental, and relational well-being. This holistic approach helps identify root causes and develop lasting strategies for growth and clarity.</p>
+    </section>
+
+    <section class="cta-section animate-on-scroll fade-up">
+      <h2>Ready to Take the Next Step?</h2>
+      <p>Your path to clarity is just a click away. Book a confidential session today.</p>
+      <a href="booking.html" class="btn btn-primary cta-btn">Book Now</a>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-logo" data-aos="fade-up">
+        <img src="https://placehold.co/150x75" alt="Template Logo" class="logo-img">
+        <h3>[Company]<br>Counselling</h3>
+      </div>
+      <p class="copyright" data-aos="fade-up" data-aos-delay="200">
+        © 2025. Website design by <a href="https://kaheichan.neocities.org">Ka Hei (Shellcraft)</a>. MIT Licensed.
+      </p>
+      <div class="copyright" data-aos="fade-up" data-aos-delay="300">
+        <a href="#">Privacy Policy</a> | <a href="#">Terms and Conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('nav-open');
+      document.body.classList.toggle('nav-is-open');
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>

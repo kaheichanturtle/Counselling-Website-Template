@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Counselling Template</title>
+  
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" /></noscript>
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="icon" href="https://placehold.co/64x64" type="image/x-icon" />
+</head>
+<body>
+
+  <header class="main-header">
+    <nav class="main-nav">
+      <a href="index.html" class="nav-logo">
+        <img src="https://placehold.co/150x75" alt="Company Logo" class="logo-img" />
+        <span class="logo-text">[Company]<br><span style="color:#3d5a80">Counselling</span></span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="current-page">Contact</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li class="book-now-li"><a href="booking.html" class="btn btn-primary nav-book-btn">Book Now</a></li>
+      </ul>
+
+      <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section contact-hero">
+      <div class="hero-content" style="flex-direction:column; text-align:center; max-width:800px; margin:auto;">
+        <h1 class="hero-title" data-aos="fade-up">
+          Get in <span class="serif-highlight">Touch</span>
+        </h1>
+        <p data-aos="fade-up" data-aos-delay="100" style="font-size:1.2rem; margin-top:1.5rem;">
+          We're here to answer your questions and help you begin your journey. Please fill out the form below, and we'll get back to you shortly.
+        </p>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <section class="contact-section">
+      <div class="contact-grid">
+        <div class="contact-form-container" data-aos="fade-right">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+            <div class="form-group">
+              <a href="#" id="submitMailto" class="btn btn-primary cta-btn">Send Message</a>
+            </div>
+          </form>
+        </div>
+
+        <div class="contact-info" data-aos="fade-left" data-aos-delay="100">
+          <h3>Contact Information</h3>
+          <p>
+            <i class="fa-solid fa-location-dot"></i> 
+            Based in Sydney, NSW (placeholder)
+          </p>
+          <p>
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:contact@example.com">contact@example.com</a>
+          </p>
+          <hr class="contact-divider" />
+          <h4>Please Note</h4>
+          <p>This contact form is for general inquiries and booking requests only. It is not monitored 24/7.</p>
+          <p class="emergency-note">
+            <strong>If you are in crisis or experiencing an emergency, please call 000 or contact Lifeline at 13 11 14 immediately.</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-logo" data-aos="fade-up">
+        <img src="https://placehold.co/150x75" alt="Template Logo" class="logo-img" />
+        <h3>[Company]<br>Counselling</h3>
+      </div>
+      <p class="copyright" data-aos="fade-up" data-aos-delay="200">
+        © 2025. Website design by <a href="https://kaheichan.neocities.org">Ka Hei (Shellcraft)</a>. MIT Licensed.
+      </p>
+      
+      <div class="copyright" data-aos="fade-up" data-aos-delay="300">
+        <a href="#">Privacy Policy</a> | <a href="#">Terms and Conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 50
+    });
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('nav-open');
+      document.body.classList.toggle('nav-is-open');
+    });
+
+    window.addEventListener('load', () => {
+      AOS.refresh();
+    });
+
+    const submitButton = document.getElementById('submitMailto');
+    submitButton.addEventListener('click', (e) => {
+      e.preventDefault(); 
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+
+      if (!name || !email || !subject || !message) {
+        alert('Please fill out all fields before sending.');
+        return;
+      }
+
+      const mailtoEmail = 'contact@example.com';
+      const mailtoSubject = encodeURIComponent(subject);
+      const mailtoBody = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+      );
+
+      const mailtoLink = `mailto:${mailtoEmail}?subject=${mailtoSubject}&body=${mailtoBody}`;
+      window.location.href = mailtoLink;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - Counselling Template</title>
+  
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="icon" href="https://placehold.co/64x64" type="image/x-icon">
+</head>
+<body>
+
+  <header class="main-header">
+    <nav class="main-nav">
+      <a href="index.html" class="nav-logo">
+        <img src="https://placehold.co/150x75" alt="Company Logo" class="logo-img">
+        <span class="logo-text">[Company]<br><span style="color: #3d5a80">Counselling</span></span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="faq.html" class="current-page">FAQ</a></li>
+        <li class="book-now-li"><a href="booking.html" class="btn btn-primary nav-book-btn">Book Now</a></li>
+      </ul>
+
+      <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section faq-hero">
+      <div class="hero-content" style="flex-direction: column; text-align: center; max-width: 800px; margin: auto;">
+        <h1 class="hero-title" data-aos="fade-up">
+          Frequently Asked <span class="serif-highlight">Questions</span>
+        </h1>
+        <p data-aos="fade-up" data-aos-delay="100" style="font-size: 1.2rem; margin-top: 1.5rem;">
+          Find answers to common questions about our counselling services, process, and policies.
+        </p>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="faq-section">
+      <div class="faq-container" data-aos="fade-up">
+
+        <details class="faq-item">
+          <summary class="faq-question">What can I expect in my first session?</summary>
+          <div class="faq-answer">
+            <p>Your first session is all about getting to know each other and understanding your goals. We’ll explore what brought you here, what you’d like to achieve, and ensure you feel comfortable moving forward. It’s a space built on trust and openness.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">How long does a typical counselling session last?</summary>
+          <div class="faq-answer">
+            <p>Most sessions last around 50 minutes. This provides enough time to explore your thoughts and emotions without feeling rushed. Longer sessions can be arranged if needed.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Is what I share confidential?</summary>
+          <div class="faq-answer">
+            <p>Yes. Everything shared during counselling is kept confidential, except in rare cases where there is a serious risk of harm or legal obligation to disclose. We’ll always explain the limits of confidentiality at the start of our work together.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">What are your fees and do you accept insurance?</summary>
+          <div class="faq-answer">
+            <p>Fees depend on the service provided. Check the booking page for details. While we don’t handle insurance directly, you may request an invoice to submit for reimbursement if your provider allows it.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">How many sessions will I need?</summary>
+          <div class="faq-answer">
+            <p>Everyone’s journey is unique. Some find what they need in just a few sessions, while others prefer ongoing support. We’ll tailor the plan to your goals and comfort level.</p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <section class="cta-section" data-aos="fade-up">
+      <h2>Have More Questions?</h2>
+      <p>If your question isn’t listed here, feel free to reach out. We’re happy to help.</p>
+      <a href="contact.html" class="btn btn-primary cta-btn">Contact Us</a>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-logo" data-aos="fade-up">
+        <img src="https://placehold.co/150x75" alt="Template Logo" class="logo-img">
+        <h3>[Company]<br>Counselling</h3>
+      </div>
+      <p class="copyright" data-aos="fade-up" data-aos-delay="200">
+        © 2025. Website design by <a href="https://kaheichan.neocities.org">Ka Hei (Shellcraft)</a>. MIT Licensed.
+      </p>
+      
+      <div class="copyright" data-aos="fade-up" data-aos-delay="300">
+        <a href="#">Privacy Policy</a> | <a href="#">Terms and Conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 50, 
+    });
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('nav-open');
+      document.body.classList.toggle('nav-is-open'); 
+    });
+    
+    window.addEventListener('load', () => {
+      AOS.refresh();
+    });
+  </script>
+</body>
+</html>
