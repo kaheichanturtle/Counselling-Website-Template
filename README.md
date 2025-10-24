@@ -31,4 +31,4 @@ Under MIT License, usage of this template must attribute the owner of this websi
 
 For collaborations, questions, or custom design work:
 🌐 kaheichan.neocities.org
-✉️ contact@kaheichan.neocities.org
+✉️ urgentkaheichan@duck.com
